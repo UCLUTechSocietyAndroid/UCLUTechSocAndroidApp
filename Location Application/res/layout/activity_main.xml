@@ -1,15 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/hello_world"
-        tools:context=".MainActivity" />
+     <com.google.android.maps.MapView
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 
+                 // this is a special Google API key which is unique for each machine
+                 // go https://developers.google.com/maps/documentation/android/v1/mapkey
+                 // if look confusing see the tutorial http://thenewboston.org/watch.php?cat=6&number=130
+                 android:apiKey="0FvuUZn4niXloAvn5zBjdRt2-Ia03aYmiktlqDw"
+                 
+                 android:id = "@+id/mvMain"
+                 android:enabled = "true"  
+                 android:clickable ="true"  
+                 />
 
+ 
+   
 </RelativeLayout>
+
