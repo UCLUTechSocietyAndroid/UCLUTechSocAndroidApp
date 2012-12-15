@@ -1,15 +1,5 @@
 package com.uclutechsocietyandroid.locationapp;
-//package com.example.maps; package i had initially
-
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-
-
-
-
+//package  package i had initially
 
 
 
@@ -49,7 +39,7 @@ import android.view.MotionEvent;
 import android.widget.Toast;
 
 public class MainActivity extends MapActivity   { //extend MapActivity to provide important map capabilities
-    
+	
 
 	
 	
@@ -252,7 +242,6 @@ public class MainActivity extends MapActivity   { //extend MapActivity to provid
 			    .setCancelable(false)
 			    .setPositiveButton("stop the music", new DialogInterface.OnClickListener() {
 
-					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						//if this button is clicked,close
@@ -272,7 +261,6 @@ public class MainActivity extends MapActivity   { //extend MapActivity to provid
 			
 			    .setNeutralButton("get address", new DialogInterface.OnClickListener() {
 
-					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						//if this button is clicked,
@@ -304,7 +292,6 @@ public class MainActivity extends MapActivity   { //extend MapActivity to provid
 			    
 			.setNegativeButton("Tagle view", new DialogInterface.OnClickListener() {
                
-				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
 					//if this button is clicked
@@ -336,7 +323,6 @@ public class MainActivity extends MapActivity   { //extend MapActivity to provid
 
 	class mylocationlistener implements LocationListener {
 
-		@Override
 		public void onLocationChanged(Location location) {
 			// TODO Auto-generated method stub
 			double exactLati;
@@ -414,19 +400,16 @@ public class MainActivity extends MapActivity   { //extend MapActivity to provid
 			}
 		}
 
-		@Override
 		public void onProviderDisabled(String provider) {
 			// TODO Auto-generated method stub
 			
 		}
 
-		@Override
 		public void onProviderEnabled(String provider) {
 			// TODO Auto-generated method stub
 			
 		}
 
-		@Override
 		public void onStatusChanged(String provider, int status, Bundle extras) {
 			// TODO Auto-generated method stub
 			

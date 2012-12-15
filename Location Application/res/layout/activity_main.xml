@@ -8,9 +8,7 @@
                  android:layout_width="fill_parent"
                  android:layout_height="fill_parent"
                  
-                 // this is a special Google API key which is unique for each computer
-                 // go https://developers.google.com/maps/documentation/android/v1/mapkey
-                 /* if look confusing see the tutorial of thenewboston about google maps api key
+                 
                  android:apiKey="0FvuUZn4niXloAvn5zBjdRt2-Ia03aYmiktlqDw"
                  
                  android:id = "@+id/mvMain"
