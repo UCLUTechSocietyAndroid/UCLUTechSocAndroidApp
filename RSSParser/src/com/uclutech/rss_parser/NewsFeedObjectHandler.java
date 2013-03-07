@@ -13,20 +13,33 @@ import com.uclutech.model.NewsFeedObject;
 
 public class NewsFeedObjectHandler extends DefaultHandler {
 
-	private static final String ENTRY = "entry";
-	private static final String ID = "id";
-	private static final String TITLE = "title";
-	private static final String CONTENT = "content";
-	private static final String DATE = "published";
+	private String newsFeedObjectTag;
+	private String urlTag;
+	private String titleTag;
+	private String contentTag;
+	private String dateTag;
 
 	private List<NewsFeedObject> newsFeedObjects = new ArrayList<NewsFeedObject>();
 	private String tempBuffer;
 	private NewsFeedObject tempNewsFeedObj;
 
+	public NewsFeedObjectHandler() {
+		this("entry","","","","");
+	}
+
+	public NewsFeedObjectHandler(String newsFeedObjectTag, String dateTag,
+			String titleTag, String contentTag, String urlTag) {
+		this.newsFeedObjectTag = newsFeedObjectTag;
+		this.dateTag = dateTag;
+		this.titleTag = titleTag;
+		this.contentTag = contentTag;
+		this.urlTag = urlTag;
+	}
+
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
-		if (qName.equalsIgnoreCase(ENTRY)) {
+		if (qName.equalsIgnoreCase(newsFeedObjectTag)) {
 			tempNewsFeedObj = new NewsFeedObject();
 		}
 	}
@@ -35,15 +48,15 @@ public class NewsFeedObjectHandler extends DefaultHandler {
 			throws SAXException {
 
 		if (tempNewsFeedObj != null) {
-			if (qName.equalsIgnoreCase(ENTRY)) {
+			if (qName.equalsIgnoreCase(newsFeedObjectTag)) {
 				newsFeedObjects.add(tempNewsFeedObj);
-			} else if (qName.equalsIgnoreCase(TITLE)) {
+			} else if (qName.equalsIgnoreCase(titleTag)) {
 				tempNewsFeedObj.setTitle(tempBuffer);
-			} else if (qName.equalsIgnoreCase(DATE)) {
+			} else if (qName.equalsIgnoreCase(dateTag)) {
 				tempNewsFeedObj.setDate(tempBuffer);
-			} else if (qName.equalsIgnoreCase(CONTENT)) {
+			} else if (qName.equalsIgnoreCase(contentTag)) {
 				tempNewsFeedObj.setContent(tempBuffer);
-			} else if (qName.equalsIgnoreCase(ID)) {
+			} else if (qName.equalsIgnoreCase(urlTag)) {
 				try {
 					tempNewsFeedObj.setContentUrl(new URL(tempBuffer));
 				} catch (MalformedURLException e) {
