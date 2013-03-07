@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#b8b5e7"
+    android:orientation="horizontal" >
+  
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:background="#b8b5e7"
+        android:orientation="vertical">
+		<!-- Name Label -->
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:paddingTop="6dip"
+            android:text="hi"
+            android:textColor="#6964ab"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+		<!-- Description label -->
+
+        <TextView
+            android:id="@+id/desciption"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:text="hi"
+            android:textColor="#13113e" >
+
+        </TextView>
+        <!-- Linear layout for cost and price Cost: Rs.100 -->
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+        <!-- Cost Label -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Link: "
+            android:textColor="#13113e"
+            android:textStyle="bold" >
+
+        </TextView>
+        <!-- Price Label -->
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#13113e"
+            android:textStyle="bold"
+            android:gravity="left">
+        </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
