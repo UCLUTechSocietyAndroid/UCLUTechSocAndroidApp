@@ -42,7 +42,8 @@ public class TheVergeFeedsImpl implements Feeder {
 	}
 
 	public static void main(String[] args) {
-		Feeder feed = new TheVergeFeedsImpl();
+		System.out.println("Reddit Feed:");
+		Feeder feed = new RedditFeedImpl();
 		List<NewsFeedObject> nfObjs = feed.getAll();
 		for (NewsFeedObject nfObj : nfObjs) {
 			System.out.println(nfObj);

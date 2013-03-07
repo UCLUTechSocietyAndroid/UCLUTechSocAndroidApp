@@ -24,7 +24,7 @@ public class NewsFeedObjectHandler extends DefaultHandler {
 	private NewsFeedObject tempNewsFeedObj;
 
 	public NewsFeedObjectHandler() {
-		this("entry","","","","");
+		this("item","pubDate","title","description","link");
 	}
 
 	public NewsFeedObjectHandler(String newsFeedObjectTag, String dateTag,
