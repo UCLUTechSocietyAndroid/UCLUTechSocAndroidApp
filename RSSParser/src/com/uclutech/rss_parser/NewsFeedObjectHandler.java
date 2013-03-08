@@ -20,7 +20,7 @@ public class NewsFeedObjectHandler extends DefaultHandler {
 	private String dateTag;
 
 	private List<NewsFeedObject> newsFeedObjects = new ArrayList<NewsFeedObject>();
-	private String tempBuffer;
+	private StringBuilder tempBuffer = new StringBuilder();
 	private NewsFeedObject tempNewsFeedObj;
 
 	public NewsFeedObjectHandler() {
@@ -51,24 +51,25 @@ public class NewsFeedObjectHandler extends DefaultHandler {
 			if (qName.equalsIgnoreCase(newsFeedObjectTag)) {
 				newsFeedObjects.add(tempNewsFeedObj);
 			} else if (qName.equalsIgnoreCase(titleTag)) {
-				tempNewsFeedObj.setTitle(tempBuffer);
-			} else if (qName.equalsIgnoreCase(dateTag)) {
-				tempNewsFeedObj.setDate(tempBuffer);
-			} else if (qName.equalsIgnoreCase(contentTag)) {
-				tempNewsFeedObj.setContent(tempBuffer);
+				tempNewsFeedObj.setTitle(tempBuffer.toString());
+			} else if (qName.equalsIgnoreCase(dateTag.toString())) {
+				tempNewsFeedObj.setDate(tempBuffer.toString());
+			} else if (qName.equalsIgnoreCase(contentTag.toString())) {
+				tempNewsFeedObj.setContent(tempBuffer.toString());
 			} else if (qName.equalsIgnoreCase(urlTag)) {
 				try {
-					tempNewsFeedObj.setContentUrl(new URL(tempBuffer));
+					tempNewsFeedObj.setContentUrl(new URL(tempBuffer.toString()));
 				} catch (MalformedURLException e) {
 					tempNewsFeedObj.setContentUrl(null);
 				}
 			}
+			tempBuffer.delete(0, tempBuffer.length());
 		}
 	}
 
 	@Override
 	public void characters(char[] buffer, int start, int length) {
-		tempBuffer = new String(buffer, start, length);
+		tempBuffer = tempBuffer.append(new String(buffer, start, length));
 	}
 
 	public List<NewsFeedObject> getAll() {

@@ -17,14 +17,15 @@ import com.uclutech.model.NewsFeedObject;
 public class RedditFeedImpl implements Feeder {
 
 	public static final String REDDIT_URL = "http://www.reddit.com/r/technology/.rss";
-	
+
 	@Override
 	public List<NewsFeedObject> getAll() {
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		try {
 
 			SAXParser parser = factory.newSAXParser();
-			NewsFeedObjectHandler handler = new NewsFeedObjectHandler("item","pubDate","title","description","guid");
+			NewsFeedObjectHandler handler = new NewsFeedObjectHandler("item",
+					"pubDate", "title", "description", "guid");
 			InputStream inputStream = new URL(REDDIT_URL).openStream();
 			parser.parse(inputStream, handler);
 			return handler.getAll();
@@ -40,5 +41,5 @@ public class RedditFeedImpl implements Feeder {
 		}
 		return null;
 	}
-	
+
 }
