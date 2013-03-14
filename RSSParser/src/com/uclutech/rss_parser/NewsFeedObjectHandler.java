@@ -13,20 +13,33 @@ import com.uclutech.model.NewsFeedObject;
 
 public class NewsFeedObjectHandler extends DefaultHandler {
 
-	private static final String ENTRY = "entry";
-	private static final String ID = "id";
-	private static final String TITLE = "title";
-	private static final String CONTENT = "content";
-	private static final String DATE = "published";
+	private String newsFeedObjectTag;
+	private String urlTag;
+	private String titleTag;
+	private String contentTag;
+	private String dateTag;
 
 	private List<NewsFeedObject> newsFeedObjects = new ArrayList<NewsFeedObject>();
-	private String tempBuffer;
+	private StringBuilder tempBuffer = new StringBuilder();
 	private NewsFeedObject tempNewsFeedObj;
+
+	public NewsFeedObjectHandler() {
+		this("item","pubDate","title","description","link");
+	}
+
+	public NewsFeedObjectHandler(String newsFeedObjectTag, String dateTag,
+			String titleTag, String contentTag, String urlTag) {
+		this.newsFeedObjectTag = newsFeedObjectTag;
+		this.dateTag = dateTag;
+		this.titleTag = titleTag;
+		this.contentTag = contentTag;
+		this.urlTag = urlTag;
+	}
 
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
-		if (qName.equalsIgnoreCase(ENTRY)) {
+		if (qName.equalsIgnoreCase(newsFeedObjectTag)) {
 			tempNewsFeedObj = new NewsFeedObject();
 		}
 	}
@@ -35,27 +48,28 @@ public class NewsFeedObjectHandler extends DefaultHandler {
 			throws SAXException {
 
 		if (tempNewsFeedObj != null) {
-			if (qName.equalsIgnoreCase(ENTRY)) {
+			if (qName.equalsIgnoreCase(newsFeedObjectTag)) {
 				newsFeedObjects.add(tempNewsFeedObj);
-			} else if (qName.equalsIgnoreCase(TITLE)) {
-				tempNewsFeedObj.setTitle(tempBuffer);
-			} else if (qName.equalsIgnoreCase(DATE)) {
-				tempNewsFeedObj.setDate(tempBuffer);
-			} else if (qName.equalsIgnoreCase(CONTENT)) {
-				tempNewsFeedObj.setContent(tempBuffer);
-			} else if (qName.equalsIgnoreCase(ID)) {
+			} else if (qName.equalsIgnoreCase(titleTag)) {
+				tempNewsFeedObj.setTitle(tempBuffer.toString());
+			} else if (qName.equalsIgnoreCase(dateTag.toString())) {
+				tempNewsFeedObj.setDate(tempBuffer.toString());
+			} else if (qName.equalsIgnoreCase(contentTag.toString())) {
+				tempNewsFeedObj.setContent(tempBuffer.toString());
+			} else if (qName.equalsIgnoreCase(urlTag)) {
 				try {
-					tempNewsFeedObj.setContentUrl(new URL(tempBuffer));
+					tempNewsFeedObj.setContentUrl(new URL(tempBuffer.toString()));
 				} catch (MalformedURLException e) {
 					tempNewsFeedObj.setContentUrl(null);
 				}
 			}
+			tempBuffer.delete(0, tempBuffer.length());
 		}
 	}
 
 	@Override
 	public void characters(char[] buffer, int start, int length) {
-		tempBuffer = new String(buffer, start, length);
+		tempBuffer = tempBuffer.append(new String(buffer, start, length));
 	}
 
 	public List<NewsFeedObject> getAll() {
