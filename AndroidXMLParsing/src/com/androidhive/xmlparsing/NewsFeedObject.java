@@ -19,6 +19,8 @@ public class NewsFeedObject {
 		this.title = title;
 	}
 
+	
+	
 	public String getBigTitle() {
 		return bigTitle;
 	}
@@ -29,6 +31,7 @@ public class NewsFeedObject {
 
 	
 	
+	
 	public String getDate() {
 		return date;
 	}
@@ -37,6 +40,9 @@ public class NewsFeedObject {
 		this.date = date;
 	}
 
+	
+	
+	
 	public String getContent() {
 		return content;
 	}
@@ -45,6 +51,8 @@ public class NewsFeedObject {
 		this.content = content;
 	}
 
+	
+	
 	public String getContentUrl() {
 		return contentUrl;
 	}
@@ -53,6 +61,7 @@ public class NewsFeedObject {
 		this.contentUrl = contentUrl;
 	}
 
+	
 	@Override
 	public String toString() {
 		String titleString = "title: " + title + "\n";

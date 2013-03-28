@@ -3,6 +3,7 @@ package com.androidhive.xmlparsing;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -14,10 +15,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.androidhive.xmlparsing.NewsFeedObject;
+
 
 public class AndroidXMLParsingActivity extends ListActivity {
 
@@ -28,7 +32,7 @@ public class AndroidXMLParsingActivity extends ListActivity {
 	
 	private List<NewsFeedObject> newsFeedObjects = new ArrayList<NewsFeedObject>();
 	private NewsFeedObject tempNewsFeedObj;
-	
+	private HashMapTranslator hashMapTranslator;
 	
 	// XML node keys
     String KEY_DATE_GLOBAL;
@@ -49,7 +53,7 @@ public class AndroidXMLParsingActivity extends ListActivity {
 	static final String KEY_DESC1 = "title";
 	static final String KEY_INTENT1 = "description";
 	
-	
+	ListView lv;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -93,11 +97,89 @@ public class AndroidXMLParsingActivity extends ListActivity {
 		}		
 		
 		
+		implementAdapter( newsFeedObjects);
 	}
 		
+	
+	
+	// implementing ListView adapter to put all information from object into the list
+	private void implementAdapter(List<NewsFeedObject> newsFeedObjects)
+	{
+		ArrayList<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		
+		
+		int listSize = 0;
+		listSize = newsFeedObjects.size();
+		
+		
+		for (int counter=0; counter < listSize; counter++) {
+		
+		tempNewsFeedObj = new NewsFeedObject();	
+		hashMapTranslator = new HashMapTranslator();	
+			
+		tempNewsFeedObj = newsFeedObjects.get(counter);
+		
+		String title = tempNewsFeedObj.getTitle();
+		String date = tempNewsFeedObj.getDate();
+		String link = tempNewsFeedObj.getContentUrl();
+		
+		ArrayList<Map<String, String>> hashMap =  hashMapTranslator.buildData(list, title, date, link);
+		
+		ListAdapter adapter = new SimpleAdapter(this, hashMap,
+				R.layout.list_item,
+				new String[] { "title", "date", "link" }, new int[] {
+						R.id.desciption,
+						R.id.date,
+						R.id.link });
+		
+		
+		setAdapter(adapter);
+		
+		
+		}
+		
+		
+	}
 		
 
-		
+
+
+// puts list view onto the view
+private void setAdapter( ListAdapter adapter)
+{
+	setListAdapter(adapter);
+
+	// selecting single ListView item
+	ListView lv = getListView();
+	
+	lv.setOnItemClickListener(new OnItemClickListener() { 
+	
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view,
+				int position, long id) {
+			
+			// getting values from selected ListItem to pass them onto details page
+			String date = ((TextView) view.findViewById(R.id.date)).getText().toString();
+			String link = ((TextView) view.findViewById(R.id.link)).getText().toString();
+			String description = ((TextView) view.findViewById(R.id.desciption)).getText().toString();
+			
+			// Starting new intent
+			Intent in = new Intent(getApplicationContext(), SingleMenuItemActivity.class);
+			in.putExtra(KEY_DATE_GLOBAL, date);
+			in.putExtra(KEY_LINK_GLOBAL, link);
+			in.putExtra(KEY_INTENT_GLOBAL, description);
+			startActivity(in);
+
+		}
+	});
+	
+}
+
+
+
+
+
+	// puts information from XML to the list of objects List<NewsFeedObject>
 	private void genericXMLParser(ArrayList<HashMap<String, String>> menuItems, NodeList nl, int i, XMLParser parser,
 			String KEY_ITEM, String KEY_DATE, String KEY_LINK, String KEY_DESC, String KEY_INTENT) 
 	{
@@ -127,46 +209,7 @@ public class AndroidXMLParsingActivity extends ListActivity {
 		    // adding object to the object list	
 		    newsFeedObjects.add(tempNewsFeedObj);
 			
-			
-		//****************************************************************************************************************	
-		// Old adapter part
-	//	ListAdapter adapter = new SimpleAdapter(this, menuItems,
-	//			R.layout.list_item,
-	//			new String[] { KEY_DATE, KEY_LINK, KEY_DESC }, new int[] {
-	//					R.id.date, R.id.link ,R.id.desciption });
-	//		
-	//	setListAdapter(adapter);
 		
-	  
-		   
-		//ListAdapter adapter = new SimpleAdapter() 
-		//*******************************************************************************************************************
-		
-		   
-				
-		// selecting single ListView item
-		ListView lv = getListView();
-
-		lv.setOnItemClickListener(new OnItemClickListener() { 
-		
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				
-				// getting values from selected ListItem to pass them onto details page
-				String date = ((TextView) view.findViewById(R.id.date)).getText().toString();
-				String link = ((TextView) view.findViewById(R.id.link)).getText().toString();
-				String description = ((TextView) view.findViewById(R.id.desciption)).getText().toString();
-				
-				// Starting new intent
-				Intent in = new Intent(getApplicationContext(), SingleMenuItemActivity.class);
-				in.putExtra(KEY_DATE_GLOBAL, date);
-				in.putExtra(KEY_LINK_GLOBAL, link);
-				in.putExtra(KEY_INTENT_GLOBAL, description);
-				startActivity(in);
-
-			}
-		});
 	}
 	
 	

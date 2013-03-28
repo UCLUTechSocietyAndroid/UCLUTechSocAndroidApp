@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+    android:background="#b8b5e7"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  <!-- Name Label -->
+
+  <TextView
+      android:id="@+id/name_label"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:paddingBottom="10dip"
+      android:paddingTop="10dip"
+      android:text="hi"
+      android:textColor="#13113e"
+      android:textColorHint="@android:color/black"
+      android:textSize="25dip"
+      android:textStyle="bold" />
+
+  <!-- Description Label -->
+  <TextView android:id="@+id/description_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#13113e"/>
+  <!-- Price Label -->
+  <TextView android:id="@+id/cost_label"
+      		android:layout_width="fill_parent"
+      		android:layout_height="wrap_content"
+      		android:textColor="#13113e"
+      		android:textStyle="bold"/>
+</LinearLayout>
