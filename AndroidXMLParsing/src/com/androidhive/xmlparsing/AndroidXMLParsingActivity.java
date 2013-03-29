@@ -11,14 +11,20 @@ import org.w3c.dom.NodeList;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
 
 import com.androidhive.xmlparsing.NewsFeedObject;
 
@@ -31,6 +37,8 @@ public class AndroidXMLParsingActivity extends ListActivity {
 	static final String URL1 = "http://www.geek.com/feed/";
 	
 	private List<NewsFeedObject> newsFeedObjects = new ArrayList<NewsFeedObject>();
+	private List<NewsFeedObject> sorted_newsFeedObjects = new ArrayList<NewsFeedObject>();
+	
 	private NewsFeedObject tempNewsFeedObj;
 	private HashMapTranslator hashMapTranslator;
 	
@@ -55,6 +63,11 @@ public class AndroidXMLParsingActivity extends ListActivity {
 	
 	ListView lv;
 
+	ArrayList<String> newsTitlesArrayList = new ArrayList<String>();
+	String[] news_articles_for_search;
+	
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -89,31 +102,140 @@ public class AndroidXMLParsingActivity extends ListActivity {
 		for (int i = 0; i<10; i++) {
 	
 	    	nl = nl1;	
-			genericXMLParser(menuItems, nl, i, parser, KEY_ITEM1, KEY_DATE1, KEY_LINK1, KEY_DESC1, KEY_INTENT1); // then its another site turn
+			genericXMLParser(menuItems, nl, i, parser, KEY_ITEM1, KEY_DATE1, KEY_LINK1, KEY_DESC1, KEY_INTENT1, i); // then its another site turn
 			
 			nl = nl0;
-			genericXMLParser( menuItems, nl, i, parser, KEY_ITEM0, KEY_DATE0, KEY_LINK0, KEY_DESC0, KEY_INTENT0); //then its bbc tur
+			genericXMLParser( menuItems, nl, i, parser, KEY_ITEM0, KEY_DATE0, KEY_LINK0, KEY_DESC0, KEY_INTENT0, i); //then its bbc tur
 			
 		}		
 		
 		
 		implementAdapter( newsFeedObjects);
+		
+		
+		// Get a reference to the AutoCompleteTextView in the layout
+	  AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_news_articles);
+		// Get the string array
+		news_articles_for_search = newsTitlesArrayList.toArray(new String[newsTitlesArrayList.size()]);;
+		
+		// Create the adapter and set it to the AutoCompleteTextView 
+		ArrayAdapter<String> adapter = 
+		        new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, news_articles_for_search);
+
+		// set adapter on textview
+		 textView.setAdapter(adapter);
+		
+		// updates the ListView from TextBox suggestions through the adapter
+		autoUpdateList(adapter, newsFeedObjects, textView);
+		
+		
+		
 	}
 		
 	
 	
-	// implementing ListView adapter to put all information from object into the list
+	// updates the ListView and TextBox suggestions through the adapter
+	private void autoUpdateList(final ArrayAdapter<String> adapter, final List<NewsFeedObject> newsFeedObjects, 
+			final AutoCompleteTextView textView) {
+		
+     adapter.registerDataSetObserver(new DataSetObserver() {
+	
+	 @Override
+	    public void onChanged() {
+	        super.onChanged();
+	      
+	      ArrayList<Integer> objectsNumbersInSortedList = new ArrayList<Integer>();
+	     
+	      String dataOnAdapter = "";
+	      
+	      objectsNumbersInSortedList.clear();
+	    
+	      
+	        for (int counter =0; counter < adapter.getCount() ; counter++) 
+	        {
+	      
+	        	Object item = adapter.getItem(counter);
+	        
+		     	dataOnAdapter = item.toString();
+	        
+		     	
+		     	
+			    int objectListSize = 0;
+			    objectListSize = newsFeedObjects.size();
+			
+	      
+			     for (int counter2 = 0; counter2 < objectListSize; counter2++) 
+			     {
+	            	 
+	            	  tempNewsFeedObj = newsFeedObjects.get(counter2);
+	            	  
+	            	  if (tempNewsFeedObj.getTitle() == dataOnAdapter) {
+	            		  objectsNumbersInSortedList.add(tempNewsFeedObj.getObjectNumber());
+	            		counter2 =  objectListSize;  
+	            	  }
+	            	  
+	            	  
+	            	  
+	              }
+	        
+	        
+			     
+	        
+	        }
+	        
+	        // getting sorted news feed objects list from number array
+	        // and if current input line is null, put original not-sorted list
+	        // in addition because adapter works strange, we illuminate it under 1 text length 
+	       if (textView.getText().length() > 1) getSortedNewsFeedObjects(objectsNumbersInSortedList);
+	       else implementAdapter(newsFeedObjects);
+	        
+	       }
+	
+        });
+     
+ 
+		
+	}
+	
+	
+	
+	private void  getSortedNewsFeedObjects(ArrayList<Integer> objectsNumbersInSortedList)
+	{
+		sorted_newsFeedObjects.clear();
+		for (int counter = 0; counter < objectsNumbersInSortedList.size(); counter++) {
+		
+			
+			for (int counter2 = 0;  counter2 < newsFeedObjects.size(); counter2++) {
+			
+			if (objectsNumbersInSortedList.get(counter) == newsFeedObjects.get(counter2).getObjectNumber() )	
+				sorted_newsFeedObjects.add(counter, newsFeedObjects.get(counter2));
+			
+			}
+			
+		
+		}
+		
+		implementAdapter(sorted_newsFeedObjects);
+	}
+	
+	
+	
+	
+	
+	
+	// Put all information from object into the list
+	// implementing ListView adapter
 	private void implementAdapter(List<NewsFeedObject> newsFeedObjects)
 	{
 		ArrayList<Map<String, String>> list = new ArrayList<Map<String, String>>();
-		
 		
 		int listSize = 0;
 		listSize = newsFeedObjects.size();
 		
 		
-		for (int counter=0; counter < listSize; counter++) {
-		
+	for (int counter=0; counter < listSize; counter++)
+	
+	{				
 		tempNewsFeedObj = new NewsFeedObject();	
 		hashMapTranslator = new HashMapTranslator();	
 			
@@ -123,6 +245,7 @@ public class AndroidXMLParsingActivity extends ListActivity {
 		String date = tempNewsFeedObj.getDate();
 		String link = tempNewsFeedObj.getContentUrl();
 		
+		//getting hash map from the list of objects by using hashMapTranslator separate object
 		ArrayList<Map<String, String>> hashMap =  hashMapTranslator.buildData(list, title, date, link);
 		
 		ListAdapter adapter = new SimpleAdapter(this, hashMap,
@@ -132,19 +255,18 @@ public class AndroidXMLParsingActivity extends ListActivity {
 						R.id.date,
 						R.id.link });
 		
+		// made up setAdapter function to return ListView with an adapter created
+		setAdapter(adapter);	
+	}
 		
-		setAdapter(adapter);
-		
-		
-		}
-		
-		
+	
+	
 	}
 		
 
 
 
-// puts list view onto the view
+// puts list view onto the view and implements onClickListener
 private void setAdapter( ListAdapter adapter)
 {
 	setListAdapter(adapter);
@@ -181,7 +303,7 @@ private void setAdapter( ListAdapter adapter)
 
 	// puts information from XML to the list of objects List<NewsFeedObject>
 	private void genericXMLParser(ArrayList<HashMap<String, String>> menuItems, NodeList nl, int i, XMLParser parser,
-			String KEY_ITEM, String KEY_DATE, String KEY_LINK, String KEY_DESC, String KEY_INTENT) 
+			String KEY_ITEM, String KEY_DATE, String KEY_LINK, String KEY_DESC, String KEY_INTENT, int objectNumber) 
 	{
 		
 		tempNewsFeedObj = new NewsFeedObject();
@@ -193,6 +315,7 @@ private void setAdapter( ListAdapter adapter)
 			Element e = (Element) nl.item(i);
 		
 			// adding each child node to the object
+			tempNewsFeedObj.setObjectNumber(objectNumber);
 			
 			String putDate = parser.getValue(e, KEY_DATE);
 			tempNewsFeedObj.setDate(putDate);
@@ -201,7 +324,9 @@ private void setAdapter( ListAdapter adapter)
 			tempNewsFeedObj.setContentUrl(putLink);
 			
 			String putTitle = parser.getValue(e, KEY_DESC);
+			newsTitlesArrayList.add(putTitle);
 			tempNewsFeedObj.setTitle(putTitle);
+			
 			
 			String putBigTitle = parser.getValue(e, KEY_INTENT);
         	tempNewsFeedObj.setBigTitle(putBigTitle);

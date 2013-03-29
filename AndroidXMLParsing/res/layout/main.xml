@@ -16,6 +16,14 @@
         android:text="Tech News "
         android:textSize="40sp" />
 
+   <AutoCompleteTextView
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/autocomplete_news_articles"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:textColor="#333333"
+       android:popupBackground = "#b8b5e7" />
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"

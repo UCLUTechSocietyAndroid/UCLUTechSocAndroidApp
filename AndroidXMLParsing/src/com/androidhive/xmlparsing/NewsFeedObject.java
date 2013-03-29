@@ -10,7 +10,18 @@ public class NewsFeedObject {
 	private String date;
 	private String content;
 	private String contentUrl;
+	
+	private int objectNumber;
 
+	public int getObjectNumber() {
+		return objectNumber;
+	}
+	
+	public void setObjectNumber(int objectNum) {
+		this.objectNumber = objectNum;
+	}
+	
+	
 	public String getTitle() {
 		return title;
 	}
