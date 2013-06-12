@@ -9,8 +9,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#b8b5e7"
-        android:orientation="vertical" >
+        android:background="@color/variant1"
+        android:orientation="vertical"
+        android:baselineAligned="true">
 
         <!-- Name Label -->
 
@@ -21,7 +22,7 @@
             android:paddingBottom="2dip"
             android:paddingTop="6dip"
             android:text="date"
-            android:textColor="#6964ab"
+            android:textColor="@color/variant2"
             android:textSize="10sp"
             android:textStyle="bold" />
 
@@ -33,7 +34,8 @@
             android:layout_height="wrap_content"
             android:paddingBottom="2dip"
             android:text="description"
-            android:textColor="#13113e" >
+            android:textColor="@color/variant3"
+            android:password="false">
         </TextView>
 
         <LinearLayout
@@ -48,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="link"
-                android:textColor="#13113e"
+                android:textColor="@color/variant3"
                 android:textStyle="bold" >
             </TextView>
             <!-- Price Label -->

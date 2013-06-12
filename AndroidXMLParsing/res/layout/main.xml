@@ -11,16 +11,18 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#514992"
+        android:background="@color/variant3"
         android:gravity="center"
         android:text="Tech News "
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:clickable="true"
+            />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="#b8b5e7" >
+        android:background="@color/variant1" >
     </ListView>
 
 </LinearLayout>
