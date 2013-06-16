@@ -4,14 +4,15 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="11" />
 
     <application
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <activity
+            android:theme="@style/AppTheme"
             android:label="@string/app_name"
-            android:name=".AndroidXMLParsingActivity" >
+            android:name=".techsocmenu.MainMenuActivity" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,10 +21,13 @@
         </activity>
 
         <!-- Single List Item View -->
-         <activity
-            android:label="Single Menu Item"
-            android:name=".SingleMenuItemActivity" >
+
+        <activity
+                android:icon="@drawable/icon"
+                android:label="Single Menu Item"
+                android:name=".news.AndroidXMLParsingActivity" >
         </activity>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
