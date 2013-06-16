@@ -30,7 +30,6 @@ public class MainMenuActivity extends Activity {
 
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getActionBar();
-        actionBar.setTitle(Html.fromHtml("<h1>techSoc Menu</h1>"));
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
 

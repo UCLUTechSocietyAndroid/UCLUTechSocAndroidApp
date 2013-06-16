@@ -9,7 +9,14 @@ public class NewsFeedObject {
 	private String content;
 	private URL contentUrl;
 
-	public String getTitle() {
+    public NewsFeedObject(String title, String date, String content, URL contentUrl) {
+        this.title = title;
+        this.date = date;
+        this.content = content;
+        this.contentUrl = contentUrl;
+    }
+
+    public String getTitle() {
 		return title;
 	}
 
@@ -46,9 +53,8 @@ public class NewsFeedObject {
 		String titleString = "title: " + title + "\n";
 		String dateString = "date: " + date + "\n";
 		String contentString = "content: " + content + "\n";
-		String contentURLString = "URL: " + contentUrl.toString() + "\n";
 
-		return titleString + dateString + contentString + contentURLString;
+		return titleString + dateString + contentString;
 	}
 
 }

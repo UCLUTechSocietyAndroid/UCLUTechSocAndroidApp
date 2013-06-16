@@ -6,8 +6,10 @@ import java.util.HashMap;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+import org.xml.sax.InputSource;
+import java.net.URL;
+import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -64,18 +66,13 @@ public class AndroidXMLParsingActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-
-
 		XMLParser parser0 = new XMLParser();
 		XMLParser parser1 = new XMLParser();
 		XMLParser parser = new XMLParser();
 
-
-
-
 		// xml = parser.getXmlFromUrl(URL); // getting XML
 
-         new RetreiveFeedTask().execute(parser0, parser1, parser);
+//         new RetrieveFeedTask().execute(parser0, parser1, parser);
 
 
 
@@ -162,11 +159,14 @@ public class AndroidXMLParsingActivity extends ListActivity {
 
 
 
-    private class RetreiveFeedTask extends AsyncTask<XMLParser, Void, Void> {
+    private class RetrieveFeedTask extends AsyncTask<List<URL>, Void, String> {
+        @Override
+        protected String doInBackground(List<URL>... urls) {
+            int count = urls.length;
+            return null;
+        }
 
-        private Exception exception;
-
-
+/*
         @Override
         protected Void doInBackground(XMLParser... xmlParsers) {
 
@@ -206,14 +206,10 @@ public class AndroidXMLParsingActivity extends ListActivity {
             }
 
             return null;
-        }
+        }*/
 
 
     }
-
-
-
-
 
 }
 

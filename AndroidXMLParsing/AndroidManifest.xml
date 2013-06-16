@@ -1,35 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.androidhive.xmlparsing"
-    android:versionCode="1"
-    android:versionName="1.0" >
+          package="com.androidhive.xmlparsing"
+          android:versionCode="1"
+          android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="11" />
 
     <application
-        android:icon="@drawable/icon"
-        android:label="@string/app_name" >
-        <activity
-            android:theme="@style/AppTheme"
-            android:label="@string/app_name"
-<<<<<<< HEAD
-            android:name=".AndroidNewsFeedActivity" >
-=======
-            android:name=".techsocmenu.MainMenuActivity" >
->>>>>>> e43119397cfdd7450823f42068a7e3acb9f5889d
-            <intent-filter >
+            android:icon="@drawable/icon"
+            android:label="@string/app_name" >
+        <activity android:name=".news.AndroidNewsFeedActivity" android:label="@string/app_name">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Single List Item View -->
-
-        <activity
-                android:icon="@drawable/icon"
-                android:label="Single Menu Item"
-                android:name=".news.AndroidXMLParsingActivity" >
         </activity>
 
     </application>
