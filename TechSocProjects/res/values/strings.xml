@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Tech Society Application</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="place_holder">PLACE HOLDER</string>
     <string name="project">Projects</string>
     <string name="attending">Attending</string>
-
 </resources>
