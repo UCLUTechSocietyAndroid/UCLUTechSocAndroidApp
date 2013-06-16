@@ -121,7 +121,7 @@ public class AndroidXMLParsingActivity extends ListActivity {
 				R.layout.list_item,
 				new String[] { KEY_DATE, KEY_DESC, KEY_LINK }, new int[] {
 						R.id.listitem_textview_date,
-						R.id.listitem_textview_desciption,
+						R.id.listitem_textview_description,
 						R.id.listview_textview_link });
 
 		setListAdapter(adapter);
@@ -142,7 +142,7 @@ public class AndroidXMLParsingActivity extends ListActivity {
 				String link = ((TextView) view.findViewById(R.id.link))
 						.getText().toString();
 				String description = ((TextView) view
-						.findViewById(R.id.listitem_textview_desciption)).getText().toString();
+						.findViewById(R.id.listitem_textview_description)).getText().toString();
 
 				// Starting new intent
 				Intent in = new Intent(getApplicationContext(),

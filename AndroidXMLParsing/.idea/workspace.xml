@@ -13,7 +13,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8177b325-5a09-4d04-a4e0-e2826ebe3444" name="Default" comment="" />
@@ -84,66 +84,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="11" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsFeedParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/rss_parser/NewsFeedParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="56" selection-start="3947" selection-end="3947" vertical-scroll-proportion="0.0" vertical-offset="2188" max-vertical-offset="2865">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1958#1974#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RedditNewsFeedsHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="44" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0" vertical-offset="178" max-vertical-offset="660">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#435#451#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsFeedObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/NewsFeedObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="56" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AndroidNewsFeedActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="0" selection-start="3722" selection-end="3722" vertical-scroll-proportion="1.5290457" vertical-offset="613" max-vertical-offset="1830">
+            <state line="95" column="59" selection-start="3086" selection-end="3086" vertical-scroll-proportion="-0.3692946" vertical-offset="1243" max-vertical-offset="1965">
               <folding>
-                <element signature="e#951#967#0" expanded="true" />
-                <element signature="e#3123#3131#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsFeedsHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/rss_parser/NewsFeedsHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="33" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#958#974#0" expanded="true" />
+                <element signature="e#3259#3267#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,13 +106,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/rss_parser/NewsFeedObjectHandler.java" />
-        <option value="$PROJECT_DIR$/src/rss_parser/RedditFeedsImpl.java" />
         <option value="$PROJECT_DIR$/src/rss_parser/Feeder.java" />
         <option value="$PROJECT_DIR$/src/rss_parser/TheVergeFeedsImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidXMLParsingActivity.java" />
         <option value="$PROJECT_DIR$/src/rss_parser/NewsFeedXmlParser.java" />
-        <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java" />
         <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/AndroidNewsFeedActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/rss_parser/RedditFeedImpl.java" />
@@ -174,6 +117,10 @@
         <option value="$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java" />
         <option value="$PROJECT_DIR$/src/model/NewsFeedObject.java" />
         <option value="$PROJECT_DIR$/src/rss_parser/NewsFeedParser.java" />
+        <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
+        <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidXMLParsingActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/AndroidXMLParsingActivity.java" />
         <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" />
       </list>
     </option>
@@ -335,6 +282,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidXMLParsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidXMLParsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidXMLParsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidXMLParsing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -561,6 +540,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -578,7 +558,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39973614" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3469657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
@@ -671,51 +650,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/concurrent/FutureTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.6162047" vertical-offset="56" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/app/Instrumentation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="0" selection-start="7775" selection-end="7775" vertical-scroll-proportion="0.80810237" vertical-offset="1901" max-vertical-offset="2370">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="432" column="0" selection-start="19421" selection-end="19421" vertical-scroll-proportion="0.80810237" vertical-offset="6086" max-vertical-offset="6555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/Handler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="3379" selection-end="3379" vertical-scroll-proportion="0.813278" vertical-offset="763" max-vertical-offset="1245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/Looper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="93" selection-start="902" selection-end="902" vertical-scroll-proportion="0.719917" vertical-offset="43" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/lang/reflect/Method.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="0" selection-start="2320" selection-end="2320" vertical-scroll-proportion="0.80810237" vertical-offset="416" max-vertical-offset="885">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="998" selection-end="998" vertical-scroll-proportion="0.33195022" vertical-offset="80" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
@@ -727,44 +664,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidXMLParsingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="0" selection-start="5672" selection-end="5672" vertical-scroll-proportion="5.2282157" vertical-offset="360" max-vertical-offset="3270">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.80810237" vertical-offset="371" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rss_parser/NewsFeedsHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="33" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/NewsFeedObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="56" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.0" vertical-offset="508" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="44" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0" vertical-offset="178" max-vertical-offset="660">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#435#451#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -786,12 +690,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/item">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/AndroidXMLParsingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="36" selection-start="4196" selection-end="4196" vertical-scroll-proportion="3.8900416" vertical-offset="0" max-vertical-offset="2340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidXMLParsingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="41" selection-start="3681" selection-end="3681" vertical-scroll-proportion="0.9024896" vertical-offset="1095" max-vertical-offset="2880">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="86" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.8713693" vertical-offset="150" max-vertical-offset="960">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/concurrent/FutureTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.80810237" vertical-offset="56" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="0" selection-start="2155" selection-end="2155" vertical-scroll-proportion="1.54371" vertical-offset="26" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/NewsFeedObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="56" selection-start="1105" selection-end="1105" vertical-scroll-proportion="1.7427386" vertical-offset="0" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="44" selection-start="987" selection-end="987" vertical-scroll-proportion="0.62655604" vertical-offset="178" max-vertical-offset="660">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#435#451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/widget/AbsListView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="301" column="0" selection-start="12729" selection-end="12729" vertical-scroll-proportion="0.80810237" vertical-offset="4121" max-vertical-offset="4590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/list_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="24" selection-start="634" selection-end="634" vertical-scroll-proportion="0.33186814" vertical-offset="119" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="0" selection-start="3722" selection-end="3722" vertical-scroll-proportion="1.5290457" vertical-offset="613" max-vertical-offset="1830">
+        <state line="95" column="59" selection-start="3086" selection-end="3086" vertical-scroll-proportion="-0.3692946" vertical-offset="1243" max-vertical-offset="1965">
           <folding>
-            <element signature="e#951#967#0" expanded="true" />
-            <element signature="e#3123#3131#0" expanded="true" />
+            <element signature="e#958#974#0" expanded="true" />
+            <element signature="e#3259#3267#0" expanded="true" />
           </folding>
         </state>
       </provider>

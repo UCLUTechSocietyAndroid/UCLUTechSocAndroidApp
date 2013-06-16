@@ -30,8 +30,8 @@ import rss_parser.RedditNewsFeedsHandler;
 public class AndroidNewsFeedActivity extends ListActivity {
 
     private Logger mLogger = Logger.getLogger(AndroidNewsFeedActivity.class.getName());
-    private List<NewsFeedObject> newsFeeds = new ArrayList<NewsFeedObject>();
-
+    private static List<NewsFeedObject> newsFeeds = new ArrayList<NewsFeedObject>();
+    private NewsFeedAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,17 +40,13 @@ public class AndroidNewsFeedActivity extends ListActivity {
         List<URL> urls = new ArrayList<URL>();
 
         try {
-            urls.add(new URL("http://www.reddit.com/.rss"));
+            new NewsFeedRetrieve(this).execute(new URL("http://www.reddit.com/.rss"));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
-        try {
-            new NewsFeedRetrieve().execute(new URL("http://www.reddit.com/.rss"));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
+        adapter = new NewsFeedAdapter(this, R.layout.list_item, newsFeeds);
+        setListAdapter(adapter);
     }
 
     public class NewsFeedAdapter extends ArrayAdapter<NewsFeedObject> {
@@ -60,7 +56,7 @@ public class AndroidNewsFeedActivity extends ListActivity {
 
         public NewsFeedAdapter(Context context, int textViewResourceId,
                                List<NewsFeedObject> newsFeeds) {
-            super(context, textViewResourceId);
+            super(context, textViewResourceId, newsFeeds);
             mContext = context;
             mNewsFeeds = newsFeeds;
         }
@@ -68,31 +64,41 @@ public class AndroidNewsFeedActivity extends ListActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
+            NewsFeedObject positionedNewsFeed = mNewsFeeds.get(position);
+            mLogger.info("Populated ");
             LayoutInflater inflater = (LayoutInflater) mContext
                     .getSystemService(LAYOUT_INFLATER_SERVICE);
             View row = inflater.inflate(R.layout.list_item, parent, false);
-            NewsFeedObject positionedNewsFeed = mNewsFeeds.get(position);
+
             TextView date = (TextView) row
                     .findViewById(R.id.listitem_textview_date);
             TextView title = (TextView) row
-                    .findViewById(R.id.listitem_textview_desciption);
-            TextView link = (TextView) row
-                    .findViewById(R.id.listview_textview_link);
+                    .findViewById(R.id.listitem_textview_description);
 
             date.setText(positionedNewsFeed.getDate());
             title.setText(positionedNewsFeed.getTitle());
-            link.setText(positionedNewsFeed.getContentUrl().toString());
-
             return row;
+
         }
 
     }
 
     public class NewsFeedRetrieve extends AsyncTask<URL, Void, List<String>> {
 
+        private ProgressDialog dialog;
+
+        public NewsFeedRetrieve(Context context) {
+            dialog = new ProgressDialog(context);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Loading. Please Wait...");
+            this.dialog.show();
+        }
+
         @Override
         protected List<String> doInBackground(URL... urls) {
-            mLogger.info("Retrieving Feeds");
             List<String> result = new ArrayList<String>();
             for (URL url : urls) {
                 result.add(getContentFromUrl(url));
@@ -104,14 +110,17 @@ public class AndroidNewsFeedActivity extends ListActivity {
         @Override
         protected void onPostExecute(List<String> strings) {
             NewsFeedsHandler handler = new RedditNewsFeedsHandler();
-            newsFeeds = handler.getNewsFeedObjects(strings.get(0));
+            List<NewsFeedObject> nfos = handler.getNewsFeedObjects(strings.get(0));
+            for (NewsFeedObject nfo : nfos) {
+                AndroidNewsFeedActivity.newsFeeds.add(nfo);
+            }
+            adapter.notifyDataSetChanged();
+            dialog.dismiss();
+            mLogger.info("notified changes");
         }
 
         @Override
         protected void onProgressUpdate(Void... voids) {
-            ProgressDialog dialog = ProgressDialog.show(AndroidNewsFeedActivity.this, "",
-                    "Loading. Please wait...", true);
-
         }
 
         private String getContentFromUrl(URL url) {

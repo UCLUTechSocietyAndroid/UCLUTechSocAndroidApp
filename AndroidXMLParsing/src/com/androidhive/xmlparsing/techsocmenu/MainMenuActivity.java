@@ -10,12 +10,9 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.androidhive.xmlparsing.AndroidXMLParsingActivity;
 import com.androidhive.xmlparsing.R;
-import com.androidhive.xmlparsing.news.AndroidNewsFeedActivity;
-import com.androidhive.xmlparsing.news.AndroidXMLParsingActivity;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class MainMenuActivity extends Activity {
