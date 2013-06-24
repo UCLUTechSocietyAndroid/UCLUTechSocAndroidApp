@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:baselineAligned="true">
 
-        <!-- Name Label -->
+        <!-- date Label -->
 
         <TextView
             android:id="@+id/listitem_textview_date"
@@ -23,7 +23,7 @@
             android:paddingTop="6dip"
             android:text="date"
             android:textColor="@color/variant2"
-            android:textSize="10sp"
+            android:textSize="13sp"
             android:textStyle="bold" />
 
         <!-- Description label -->
@@ -32,10 +32,12 @@
             android:id="@+id/listitem_textview_description"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="2dip"
+            android:paddingBottom="5dip"
             android:text="description"
             android:textColor="@color/variant3"
-            android:password="false">
+            android:textSize="23dip"
+            android:password="false"
+           >
         </TextView>
 
         <LinearLayout
@@ -49,18 +51,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="link"
+                android:text="link: "
                 android:textColor="@color/variant3"
                 android:textStyle="bold" >
             </TextView>
-            <!-- Price Label -->
+            <!-- link Label -->
 
             <TextView
                 android:id="@+id/link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
+                android:text="hi"
                 android:textColor="#13113e"
+                android:textSize="15dip"
                 android:textStyle="bold" >
             </TextView>
         </LinearLayout>

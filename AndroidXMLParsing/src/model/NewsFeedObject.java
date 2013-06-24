@@ -7,9 +7,9 @@ public class NewsFeedObject {
 	private String title;
 	private String date;
 	private String content;
-	private URL contentUrl;
+	private String contentUrl;
 
-    public NewsFeedObject(String title, String date, String content, URL contentUrl) {
+    public NewsFeedObject(String title, String date, String content, String contentUrl) {
         this.title = title;
         this.date = date;
         this.content = content;
@@ -40,11 +40,11 @@ public class NewsFeedObject {
 		this.content = content;
 	}
 
-	public URL getContentUrl() {
+	public String getContentUrl() {
 		return contentUrl;
 	}
 
-	public void setContentUrl(URL contentUrl) {
+	public void setContentUrl(String contentUrl) {
 		this.contentUrl = contentUrl;
 	}
 

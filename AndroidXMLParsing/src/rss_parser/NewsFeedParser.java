@@ -90,7 +90,7 @@ public class NewsFeedParser {
         String title = null;
         String content = null;
         String date = null;
-        URL contentURL = null;
+        String contentURL = null;
         while (parser.next() != XmlPullParser.END_TAG) {
             mLogger.info("Parsing Item");
             if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -105,6 +105,8 @@ public class NewsFeedParser {
                 content = readContent(parser);
             } else if (name.equals(mTags.get(DATE_TAG))) {
                 date = readDate(parser);
+            } else if (name.equals(mTags.get(CONTENT_URL_TAG))){
+                contentURL = readLink(parser);
             } else {
                 skip(parser);
             }
@@ -127,17 +129,9 @@ public class NewsFeedParser {
 
     // Processes link tags in the feed.
     private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
-        String link = "";
-        parser.require(XmlPullParser.START_TAG, ns, "link");
-        String tag = parser.getName();
-        String relType = parser.getAttributeValue(null, "rel");
-        if (tag.equals("link")) {
-            if (relType.equals("alternate")){
-                link = parser.getAttributeValue(null, "href");
-                parser.nextTag();
-            }
-        }
-        parser.require(XmlPullParser.END_TAG, ns, "link");
+        parser.require(XmlPullParser.START_TAG, ns, mTags.get(CONTENT_URL_TAG));
+        String link = readText(parser);
+        parser.require(XmlPullParser.END_TAG, ns, mTags.get(CONTENT_URL_TAG));
         return link;
     }
 

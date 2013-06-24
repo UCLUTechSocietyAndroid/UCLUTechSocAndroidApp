@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background = "#9B9B9B"
+        android:background = "@color/variant2"
         android:title="Menu"
         >
 
     <item android:id="@+id/menu_save"
           android:title="Log in"
-          android:textColor="#2A1973"
+          android:textColor="@color/variant3"
           android:showAsAction="ifRoom|withText" />
 
 
@@ -23,3 +24,5 @@
 
 
 </menu>
+
+
