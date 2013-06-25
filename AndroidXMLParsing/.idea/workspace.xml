@@ -256,7 +256,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="245" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="250" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -271,7 +271,37 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="253" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="258" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="231" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="243" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -301,7 +331,97 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="236" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="238" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="223" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="222" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="225" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="230" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="237" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" line="242" class="com.androidhive.xmlparsing.news.AndroidNewsFeedActivity.NewsFeedRetrieve" package="com.androidhive.xmlparsing.news">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -362,11 +482,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidNewsFeedActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidNewsFeedActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="0" selection-start="6381" selection-end="6381" vertical-scroll-proportion="0.565" vertical-offset="2624" max-vertical-offset="3810">
+            <state line="269" column="69" selection-start="7591" selection-end="7617" vertical-scroll-proportion="0.0" vertical-offset="3364" max-vertical-offset="3885">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedditNewsFeedsHandler.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="911" selection-end="911" vertical-scroll-proportion="0.691023" vertical-offset="14" max-vertical-offset="630">
+              <folding>
+                <element signature="e#563#579#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -374,7 +505,7 @@
       <file leaf-file-name="NewsFeedParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rss_parser/NewsFeedParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="42" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="2565">
+            <state line="93" column="42" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2565">
               <folding />
             </state>
           </provider>
@@ -395,7 +526,7 @@
       <file leaf-file-name="NewsFeedObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/NewsFeedObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="990">
+            <state line="41" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -405,6 +536,15 @@
         <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="23" column="13" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BBCNewsFeedsHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/rss_parser/BBCNewsFeedsHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="55" selection-start="733" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -429,13 +569,13 @@
         <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/main_menu.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/rss_parser/BBCNewsFeedsHandler.java" />
         <option value="$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class" />
-        <option value="$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java" />
         <option value="$PROJECT_DIR$/src/rss_parser/NewsFeedParser.java" />
         <option value="$PROJECT_DIR$/src/model/NewsFeedObject.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java" />
+        <option value="$PROJECT_DIR$/src/rss_parser/BBCNewsFeedsHandler.java" />
+        <option value="$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java" />
       </list>
     </option>
   </component>
@@ -444,9 +584,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="52" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="716" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -891,7 +1031,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="52" width="1301" height="716" extended-state="7" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="2" side_tool="false" content_ui="tabs" />
@@ -899,19 +1039,19 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17862839" sideWeight="0.4996016" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.192" sideWeight="0.4996016" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5003984" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23381294" sideWeight="0.46701846" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964029" sideWeight="0.28627968" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.4996016" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28643215" sideWeight="0.4996016" order="3" side_tool="false" content_ui="tabs" x="0" y="22" width="1440" height="878" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4496" sideWeight="0.4996016" order="3" side_tool="false" content_ui="tabs" x="0" y="22" width="1440" height="878" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24892086" sideWeight="0.43667546" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.6736" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23187251" sideWeight="0.71356785" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32535884" sideWeight="0.4996016" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23187251" sideWeight="0.808" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3248" sideWeight="0.4996016" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1043,34 +1183,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.2762063" vertical-offset="14" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="20" selection-start="2315" selection-end="2315" vertical-scroll-proportion="1.8521739" vertical-offset="0" max-vertical-offset="1500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rss_parser/BBCNewsFeedsHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="39" selection-start="357" selection-end="357" vertical-scroll-proportion="0.24958402" vertical-offset="0" max-vertical-offset="601">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/org/xmlpull/v1/XmlPullParser.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="161" selection-end="161" vertical-scroll-proportion="0.12755102" vertical-offset="0" max-vertical-offset="1545">
@@ -1078,9 +1190,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/NewsFeedObject.java">
+    <entry file="file://$PROJECT_DIR$/src/rss_parser/NewsFeedsHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="990">
+        <state line="7" column="17" selection-start="93" selection-end="93" vertical-scroll-proportion="0.17523365" vertical-offset="0" max-vertical-offset="428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="20" selection-start="2315" selection-end="2315" vertical-scroll-proportion="2.223382" vertical-offset="0" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
@@ -1095,9 +1214,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rss_parser/NewsFeedsHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/model/NewsFeedObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="93" selection-end="93" vertical-scroll-proportion="0.17523365" vertical-offset="0" max-vertical-offset="428">
+        <state line="41" column="0" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/techsocmenu/MainMenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="674" selection-end="674" vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="825">
           <folding />
         </state>
       </provider>
@@ -1111,8 +1237,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/androidhive/xmlparsing/news/AndroidNewsFeedActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="0" selection-start="6381" selection-end="6381" vertical-scroll-proportion="0.565" vertical-offset="2624" max-vertical-offset="3810">
+        <state line="269" column="69" selection-start="7591" selection-end="7617" vertical-scroll-proportion="0.0" vertical-offset="3364" max-vertical-offset="3885">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rss_parser/BBCNewsFeedsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="55" selection-start="733" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rss_parser/RedditNewsFeedsHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="911" selection-end="911" vertical-scroll-proportion="0.691023" vertical-offset="14" max-vertical-offset="630">
+          <folding>
+            <element signature="e#563#579#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

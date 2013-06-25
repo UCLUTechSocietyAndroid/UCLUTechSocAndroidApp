@@ -223,24 +223,29 @@ public class AndroidNewsFeedActivity extends ListActivity {
                 if ((count1>=handlerList1.size()) && (count2>=handlerList2.size()) )
                     count=-1;
 
+                else if (count1>=handlerList1.size() && (count==1)) {
+                    count++;
+                    countList--;
+                }
+
                 else if (count==1) {
                     handlerList.add(countList,handlerList1.get(count1));
                     count++;
                     count1++;
                 }
-                else if (count1>=handlerList1.size() && (count==1)) {
-                    count++;
-                }
 
+
+                else if ( (count2>=handlerList2.size()) && (count==2) ) {
+                    count=1;
+                    countList--;
+                }
 
                 else if (count==2) {
                     handlerList.add(countList,handlerList2.get(count2));
                     count=1;
                     count2++;
                 }
-                else if ( (count2>=handlerList2.size()) || (count==2) ) {
-                    count=1;
-                }
+
 
 
                 else count=-1;

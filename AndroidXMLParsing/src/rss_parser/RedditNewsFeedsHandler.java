@@ -29,6 +29,7 @@ public class RedditNewsFeedsHandler implements NewsFeedsHandler {
         map.put(NewsFeedParser.TITLE_TAG, "title");
         map.put(NewsFeedParser.CONTENT_TAG, "description");
         map.put(NewsFeedParser.DATE_TAG, "pubDate");
+        map.put(NewsFeedParser.CONTENT_URL_TAG,"link");
 
         NewsFeedParser parser = new NewsFeedParser(newsFeed, map);
 
