@@ -203,55 +203,58 @@ public class AndroidNewsFeedActivity extends ListActivity {
 
             List<NewsFeedObject> handlerList = new ArrayList<NewsFeedObject>();
 
+            //source1
             List<NewsFeedObject> handlerList1 = null;
-            int count1 = 0;
+            int sourcePlace1 = 0;
 
+            //source2
             List<NewsFeedObject> handlerList2 = null;
-            int count2 = 0;
+            int sourcePlace2 = 0;
 
             int count = 1;
-            int countList = 0;
+            int mainFeedPlace = 0;
 
             //geting news feed objects from news sources
             handlerList1 = getNewsFeed(urls,0);
             handlerList2 = getNewsFeed(urls,1);
 
-            // part i am working on now. which distributes news.
+
+            // count determine which news to choose
             while (count != -1) {
 
 
-                if ((count1>=handlerList1.size()) && (count2>=handlerList2.size()) )
+                if ((sourcePlace1>=handlerList1.size()) && (sourcePlace2>=handlerList2.size()) )
                     count=-1;
 
-                else if (count1>=handlerList1.size() && (count==1)) {
+
+                else if ((count==1)&&(handlerList1!=null)) {
+
+
+                    if (sourcePlace1<handlerList1.size()) {
+                        handlerList.add(mainFeedPlace,handlerList1.get(sourcePlace1));
+                        sourcePlace1++;
+                        mainFeedPlace++;
+                    }
+
                     count++;
-                    countList--;
-                }
-
-                else if (count==1) {
-                    handlerList.add(countList,handlerList1.get(count1));
-                    count++;
-                    count1++;
                 }
 
 
-                else if ( (count2>=handlerList2.size()) && (count==2) ) {
+                else if ((count==2)&&(handlerList2!=null))  {
+
+
+                    if (sourcePlace2<handlerList2.size()) {
+                       handlerList.add(mainFeedPlace,handlerList2.get(sourcePlace2));
+                       sourcePlace2++;
+                       mainFeedPlace++;
+                    }
+
                     count=1;
-                    countList--;
-                }
-
-                else if (count==2) {
-                    handlerList.add(countList,handlerList2.get(count2));
-                    count=1;
-                    count2++;
                 }
 
 
 
                 else count=-1;
-
-                countList++;
-
 
             }
 
