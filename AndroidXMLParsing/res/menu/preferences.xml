@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="News Sources">
+
+        <CheckBoxPreference
+                android:key="checkbox_source_reddit"
+                android:title="Reddit News" />
+
+        <CheckBoxPreference
+                android:key="checkbox_source_bbc"
+                android:title="BBC News" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

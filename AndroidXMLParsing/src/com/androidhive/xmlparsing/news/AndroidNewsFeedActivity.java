@@ -15,18 +15,23 @@ import android.app.ActionBar;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.androidhive.xmlparsing.R;
+import com.androidhive.xmlparsing.settings.NewsPreferencesActivity;
 
 import model.NewsFeedObject;
 import rss_parser.BBCNewsFeedsHandler;
@@ -37,13 +42,30 @@ import rss_parser.RedditNewsFeedsHandler;
 public class AndroidNewsFeedActivity extends ListActivity {
 
     private Logger mLogger = Logger.getLogger(AndroidNewsFeedActivity.class.getName());
-    private static List<NewsFeedObject> newsFeeds = new ArrayList<NewsFeedObject>();
+
+    //any reason why it was static
+    private List<NewsFeedObject> newsFeeds = new ArrayList<NewsFeedObject>();
+
     private NewsFeedAdapter adapter;
+    SharedPreferences mySharedPreferences;
 
     // assign handlers for each news source
     NewsFeedsHandler handler_reddit = new RedditNewsFeedsHandler();
     NewsFeedsHandler handler_bbc = new BBCNewsFeedsHandler();
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.newsSettings:
+                intent = new Intent(this, NewsPreferencesActivity.class);
+                this.startActivity(intent);
+
+        }
+        return (super.onOptionsItemSelected(item));
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
@@ -55,6 +77,7 @@ public class AndroidNewsFeedActivity extends ListActivity {
 
         //static final String URL0 = "http://feeds.bbci.co.uk/news/technology/rss.xml";
 
+        mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
 
         try {
@@ -129,7 +152,6 @@ public class AndroidNewsFeedActivity extends ListActivity {
 
         int counter=0;
 
-        List<NewsFeedObject> nfos = null;
 
         public NewsFeedRetrieve(Context context) {
             dialog = new ProgressDialog(context);
@@ -144,13 +166,10 @@ public class AndroidNewsFeedActivity extends ListActivity {
         @Override
         protected List<NewsFeedObject> doInBackground(URL... urls) {
 
-            List<NewsFeedObject> handlerList = null;
-
-            //List<NewsFeedObject> url_xml = new HashMap<String,String>();
+            List<NewsFeedObject> handlerList = new ArrayList<NewsFeedObject>();
 
             // takes news sources and returns objects in right order
             handlerList = sortNewsFeed(urls);
-
 
             return handlerList;
         }
@@ -159,8 +178,9 @@ public class AndroidNewsFeedActivity extends ListActivity {
         protected void onPostExecute(List<NewsFeedObject> nfos) {
 
 
+
                for (NewsFeedObject nfo : nfos) {
-                  AndroidNewsFeedActivity.newsFeeds.add(nfo);
+                  newsFeeds.add(nfo);//AndroidNewsFeedActivity.
                }
 
 
@@ -214,39 +234,59 @@ public class AndroidNewsFeedActivity extends ListActivity {
             int count = 1;
             int mainFeedPlace = 0;
 
+            //get preference values
+            boolean bbcSource = mySharedPreferences.getBoolean("checkbox_source_bbc", false);
+            boolean redditSource = mySharedPreferences.getBoolean("checkbox_source_reddit", false);
+
+
             //geting news feed objects from news sources
-            handlerList1 = getNewsFeed(urls,0);
-            handlerList2 = getNewsFeed(urls,1);
+            // Restore preferences
+            int newsArticlesNumber=0;
+            if (redditSource) {
+                handlerList1 = getNewsFeed(urls,0);
+                newsArticlesNumber+=handlerList1.size();
+            }
 
+            if (bbcSource) {
+                handlerList2 = getNewsFeed(urls,1);
+                newsArticlesNumber+=handlerList2.size();
+            }
 
+            // NEED TO REFACTOR CODE HERE THROUGH OBJECTS
             // count determine which news to choose
             while (count != -1) {
 
 
-                if ((sourcePlace1>=handlerList1.size()) && (sourcePlace2>=handlerList2.size()) )
+                if (mainFeedPlace>=newsArticlesNumber)
                     count=-1;
 
 
-                else if ((count==1)&&(handlerList1!=null)) {
+
+                else if ((count==1)) {
 
 
-                    if (sourcePlace1<handlerList1.size()) {
-                        handlerList.add(mainFeedPlace,handlerList1.get(sourcePlace1));
-                        sourcePlace1++;
-                        mainFeedPlace++;
+                    if (handlerList1!=null) {
+
+                       if (sourcePlace1<handlerList1.size()) {
+                          handlerList.add(mainFeedPlace,handlerList1.get(sourcePlace1));
+                          sourcePlace1++;
+                          mainFeedPlace++;
+                       }
                     }
 
                     count++;
                 }
 
 
-                else if ((count==2)&&(handlerList2!=null))  {
+                else if (count==2)  {
 
 
-                    if (sourcePlace2<handlerList2.size()) {
-                       handlerList.add(mainFeedPlace,handlerList2.get(sourcePlace2));
-                       sourcePlace2++;
-                       mainFeedPlace++;
+                    if (handlerList2!=null) {
+                       if (sourcePlace2<handlerList2.size()) {
+                         handlerList.add(mainFeedPlace,handlerList2.get(sourcePlace2));
+                         sourcePlace2++;
+                         mainFeedPlace++;
+                       }
                     }
 
                     count=1;
