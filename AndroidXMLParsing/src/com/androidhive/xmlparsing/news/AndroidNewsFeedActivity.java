@@ -3,6 +3,7 @@ package com.androidhive.xmlparsing.news;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -32,6 +33,8 @@ import android.widget.TextView;
 
 import com.androidhive.xmlparsing.R;
 import com.androidhive.xmlparsing.settings.NewsPreferencesActivity;
+import com.androidhive.xmlparsing.techsocmenu.ActionBarItemNavigation;
+import com.androidhive.xmlparsing.techsocmenu.MainMenuActivity;
 
 import model.NewsFeedObject;
 import rss_parser.BBCNewsFeedsHandler;
@@ -55,13 +58,12 @@ public class AndroidNewsFeedActivity extends ListActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()) {
-            case R.id.newsSettings:
-                intent = new Intent(this, NewsPreferencesActivity.class);
-                this.startActivity(intent);
 
-        }
+        // goes through all action bar ids, to do something relatively to the item pressed
+        ActionBarItemNavigation itemNavigation = new ActionBarItemNavigation();
+
+        itemNavigation.sortSelectedItemOptions(item,this);
+
         return (super.onOptionsItemSelected(item));
     }
 
@@ -70,36 +72,45 @@ public class AndroidNewsFeedActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(Html.fromHtml("<h1>techSoc News</h1>"));
 
-        List<URL> urls = new ArrayList<URL>();
-
-        //static final String URL0 = "http://feeds.bbci.co.uk/news/technology/rss.xml";
-
-        mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-
-        try {
-            new NewsFeedRetrieve(this).execute(new URL("http://www.reddit.com/.rss"),
-                    new URL("http://feeds.bbci.co.uk/news/technology/rss.xml"));
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        // getting newsFeeds
+        startNewsSelection();
 
         adapter = new NewsFeedAdapter(this, R.layout.list_item, newsFeeds);
         setListAdapter(adapter);
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.title);
+        item.setTitle("News");
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(Html.fromHtml(""));
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         return true;
+    }
+
+
+    public void startNewsSelection() {
+
+        List<URL> urls = new ArrayList<URL>();
+
+        mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        try {
+             new NewsFeedRetrieve(this).execute(new URL("http://www.reddit.com/.rss"),
+             new URL("http://feeds.bbci.co.uk/news/technology/rss.xml"));
+
+        } catch (MalformedURLException e) {
+             e.printStackTrace();
+        }
+
     }
 
 

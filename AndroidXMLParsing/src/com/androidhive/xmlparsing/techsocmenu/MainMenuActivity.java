@@ -2,6 +2,7 @@ package com.androidhive.xmlparsing.techsocmenu;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -33,18 +34,24 @@ public class MainMenuActivity extends Activity {
         MenuInflater inflater = getMenuInflater();
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.title);
+        item.setTitle("Menu");
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(Html.fromHtml(""));
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()) {
-            case R.id.newsSettings:
-                intent = new Intent(this, NewsPreferencesActivity.class);
-                this.startActivity(intent);
 
-        }
+        // goes through all action bar ids, to do something relatively to the item pressed
+        ActionBarItemNavigation itemNavigation = new ActionBarItemNavigation();
+        itemNavigation.sortSelectedItemOptions(item, this);
+
         return (super.onOptionsItemSelected(item));
     }
 
@@ -54,11 +61,8 @@ public class MainMenuActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-
         checkAndUpdateSharedPreference();
 
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(Html.fromHtml("<h1>techSoc Menu</h1>"));
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
 

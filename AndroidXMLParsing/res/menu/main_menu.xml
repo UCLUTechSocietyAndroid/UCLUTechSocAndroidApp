@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background = "@color/variant2"
-        >
+        android:background = "@color/variant2">
 
-    <item android:id="@+id/menu_save"
-          android:title="Log in"
-          android:textColor="@color/variant3"
-          android:showAsAction="ifRoom|withText" />
 
+
+    <item android:id="@+id/title"
+          android:showAsAction="always"
+          android:title="Menu"
+          android:textColor="@color/variant3">
+        <menu>
+            <item android:id="@+id/newsMenu"
+                  android:title="News" />
+            <item android:id="@+id/eventsMenu"
+                  android:title="Events" />
+            <item android:id="@+id/projectsMenu"
+                  android:title="Projects" />
+            <item android:id="@+id/gamesMenu"
+                  android:title="Games" />
+        </menu>
+
+    </item>
 
     <item android:id="@+id/file"
           android:showAsAction="always"
@@ -17,17 +29,31 @@
         <!-- "file" submenu -->
         <menu>
 
-            <item android:id="@+id/newsSettings"
-                  android:title="News Settings" />
-            <item android:id="@+id/eventsSettings"
-                  android:title="Events Settings" />
-            <item android:id="@+id/projectsSettings"
-                  android:title="Projects Settings" />
-            <item android:id="@+id/gamesSettings"
-                  android:title="Games Settings" />
+            <item android:id="@+id/menu_save"
+                  android:title="Log in"
+                  android:textColor="@color/variant3"
+                  android:showAsAction="ifRoom|withText" />
+
+            <item android:id="@+id/menu_save"
+                  android:title="Settings"
+                  android:textColor="@color/variant3"
+                  android:showAsAction="ifRoom|withText" >
+                   <menu>
+                       <item android:id="@+id/newsSettings"
+                             android:title="News Settings" />
+                       <item android:id="@+id/eventsSettings"
+                             android:title="Events Settings" />
+                       <item android:id="@+id/projectsSettings"
+                             android:title="Projects Settings" />
+                       <item android:id="@+id/gamesSettings"
+                             android:title="Games Settings" />
+                   </menu>
+            </item>
 
         </menu>
     </item>
+
+
 
 
 </menu>

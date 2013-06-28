@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import com.androidhive.xmlparsing.news.AndroidNewsFeedActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,6 +13,7 @@ import java.util.List;
 */
 
 public class NewsPreferencesActivity extends Activity  {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class NewsPreferencesActivity extends Activity  {
 
         Intent intent = new Intent(this, AndroidNewsFeedActivity.class);
         this.startActivity(intent);
+
         super.onStop();
     }
 
