@@ -232,74 +232,57 @@ public class AndroidNewsFeedActivity extends ListActivity {
 
         private List<NewsFeedObject> sortNewsFeed(URL[] urls) {
 
-            List<NewsFeedObject> handlerList = new ArrayList<NewsFeedObject>();
-
-            //source1
-            List<NewsFeedObject> handlerList1 = null;
-            int sourcePlace1 = 0;
-
-            //source2
-            List<NewsFeedObject> handlerList2 = null;
-            int sourcePlace2 = 0;
+            List<NewsFeedObject> handlerListStart = new ArrayList<NewsFeedObject>();
 
             int count = 1;
-            int mainFeedPlace = 0;
+            int newsArticlesNumber=0;
 
             //get preference values
             boolean bbcSource = mySharedPreferences.getBoolean("checkbox_source_bbc", false);
             boolean redditSource = mySharedPreferences.getBoolean("checkbox_source_reddit", false);
 
+            NewsSourceObject finalSourceObject = new NewsSourceObject(handlerListStart,0);
 
-            //geting news feed objects from news sources
-            // Restore preferences
-            int newsArticlesNumber=0;
+            NewsSourceObject redditSourceObject = new NewsSourceObject(null,0);
+            NewsSourceObject bbcSourceObject = new NewsSourceObject(null,0);
+
+
+
             if (redditSource) {
-                handlerList1 = getNewsFeed(urls,0);
-                newsArticlesNumber+=handlerList1.size();
+
+                redditSourceObject.setHandlerList(getNewsFeed(urls,0));
+
+                //adding redditSource size to define limitation
+                newsArticlesNumber+=redditSourceObject.getHandlerList().size();
             }
 
             if (bbcSource) {
-                handlerList2 = getNewsFeed(urls,1);
-                newsArticlesNumber+=handlerList2.size();
+
+                bbcSourceObject.setHandlerList(getNewsFeed(urls,1));
+
+                //adding redditSource size to define limitation
+                newsArticlesNumber+=bbcSourceObject.getHandlerList().size();
             }
 
-            // NEED TO REFACTOR CODE HERE THROUGH OBJECTS
-            // count determine which news to choose
+
             while (count != -1) {
 
 
-                if (mainFeedPlace>=newsArticlesNumber)
+                if (finalSourceObject.getSourceArrayPlace()>=newsArticlesNumber)
                     count=-1;
 
 
 
-                else if ((count==1)) {
+                else if (count==1) {
 
-
-                    if (handlerList1!=null) {
-
-                       if (sourcePlace1<handlerList1.size()) {
-                          handlerList.add(mainFeedPlace,handlerList1.get(sourcePlace1));
-                          sourcePlace1++;
-                          mainFeedPlace++;
-                       }
-                    }
-
+                    newsPicker(redditSourceObject,finalSourceObject);
                     count++;
                 }
 
 
                 else if (count==2)  {
 
-
-                    if (handlerList2!=null) {
-                       if (sourcePlace2<handlerList2.size()) {
-                         handlerList.add(mainFeedPlace,handlerList2.get(sourcePlace2));
-                         sourcePlace2++;
-                         mainFeedPlace++;
-                       }
-                    }
-
+                    newsPicker(bbcSourceObject,finalSourceObject);
                     count=1;
                 }
 
@@ -310,8 +293,35 @@ public class AndroidNewsFeedActivity extends ListActivity {
             }
 
 
-            return handlerList;
+            return finalSourceObject.getHandlerList();
         }
+
+
+        private void newsPicker(NewsSourceObject sourceObject, NewsSourceObject finalSourceObject) {
+
+            List<NewsFeedObject> handlerList = sourceObject.getHandlerList();
+            List<NewsFeedObject> finalHandlerList = finalSourceObject.getHandlerList();
+            int sourcePlace = sourceObject.getSourceArrayPlace();
+            int finalFeedPlace = finalSourceObject.getSourceArrayPlace();
+
+            if (handlerList!=null) {
+
+                if (sourcePlace<handlerList.size()) {
+
+                    finalHandlerList.add(finalFeedPlace,handlerList.get(sourcePlace));
+                    finalSourceObject.setHandlerList(finalHandlerList);
+
+                    // update current news number in the list
+                    sourceObject.setSourceArrayPlace(sourcePlace+1);
+                    finalSourceObject.setSourceArrayPlace(finalFeedPlace+1);
+
+                }
+            }
+
+        }
+
+
+
 
 
         private  List<NewsFeedObject> getNewsFeed(URL[] urls, int newsSource) {

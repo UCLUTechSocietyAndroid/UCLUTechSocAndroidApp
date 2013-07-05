@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import com.androidhive.xmlparsing.R;
 import com.androidhive.xmlparsing.news.AndroidNewsFeedActivity;
+import com.androidhive.xmlparsing.projects.AndroidProjectsMenuActivity;
 import com.androidhive.xmlparsing.settings.NewsPreferencesActivity;
 
 /**
@@ -29,6 +30,13 @@ public class ActionBarItemNavigation {
             //pass current object
             sender.startActivity(intent);
             break;
+
+        case R.id.projectsMenu:
+            intent = new Intent(sender, AndroidProjectsMenuActivity.class);
+            //pass current object
+            sender.startActivity(intent);
+            break;
+
 
         // on pressing label(logo)
         case android.R.id.home:

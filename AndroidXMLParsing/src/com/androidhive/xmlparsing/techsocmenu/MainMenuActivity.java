@@ -20,6 +20,7 @@ import com.androidhive.xmlparsing.news.AndroidNewsFeedActivity;
 import com.androidhive.xmlparsing.R;
 import android.widget.AdapterView.OnItemClickListener;
 
+import com.androidhive.xmlparsing.projects.AndroidProjectsMenuActivity;
 import com.androidhive.xmlparsing.settings.NewsPreferencesActivity;
 
 public class MainMenuActivity extends Activity {
@@ -73,13 +74,19 @@ public class MainMenuActivity extends Activity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent;
                 switch(i) {
 
                     case 0: {
-                        Intent intent = new Intent(MainMenuActivity.this, AndroidNewsFeedActivity.class);
+                        intent = new Intent(MainMenuActivity.this, AndroidNewsFeedActivity.class);
                         MainMenuActivity.this.startActivity(intent);
                     }
                     break;
+
+                    case 2: {
+                        intent = new Intent(MainMenuActivity.this, AndroidProjectsMenuActivity.class);
+                        MainMenuActivity.this.startActivity(intent);
+                    }
 
                 }
 
